@@ -1,4 +1,4 @@
-# React + Vite
+# React + Vite...
 
 I created this app as follows:
 bash
