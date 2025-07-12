@@ -1,4 +1,6 @@
 import { FaTimes } from 'react-icons/fa';
+import React from 'react';
+import PropTypes from 'prop-types';
 //use rafce to create a functional component with an export statement
 
 const Task = ({ task, onDelete, onToggle }) => {
@@ -18,16 +20,15 @@ const Task = ({ task, onDelete, onToggle }) => {
     </div>
   );
 };
+Task.propTypes = {
+  task: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    text: PropTypes.string.isRequired,
+    day: PropTypes.string.isRequired,
+    reminder: PropTypes.bool.isRequired,
+  }).isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onToggle: PropTypes.func.isRequired,
+};
 
 export default Task;
-
-// <<< Simplified version: >>>
-// const Task = () => {
-//   return (
-//     <div className='task'>
-//       <h3>My Task</h3>
-//     </div>
-//   );
-// }
-
-// export default Task;

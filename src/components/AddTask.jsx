@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const AddTask = ({ onAdd }) => {
   //onAdd is a parameter prop passing addTask function from App component
@@ -63,6 +65,9 @@ const AddTask = ({ onAdd }) => {
       <input type="submit" value="Save Task" className="btn btn-block" />
     </form>
   );
+};
+AddTask.propTypes = {
+  onAdd: PropTypes.func.isRequired,
 };
 
 export default AddTask;

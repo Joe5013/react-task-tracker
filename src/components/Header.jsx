@@ -1,6 +1,7 @@
 import Button from './Button';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
+import React from 'react';
 
 const Header = ({ title, onAdd, showAdd }) => {
   const location = useLocation();
@@ -25,6 +26,8 @@ Header.defaultProps = {
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
+  showAdd: PropTypes.bool.isRequired,
+  onAdd: PropTypes.func.isRequired,
 };
 
 export default Header;

@@ -7,6 +7,8 @@ import AddTask from './components/AddTask.jsx';
 import About from './components/About.jsx';
 import React from 'react'; // Required for class-based ErrorBoundary
 
+import PropTypes from 'prop-types';
+
 // Error Boundary Component
 class ErrorBoundary extends React.Component {
   state = { hasError: false, error: null };
@@ -25,6 +27,10 @@ class ErrorBoundary extends React.Component {
     return this.props.children;
   }
 }
+
+ErrorBoundary.propTypes = {
+  children: PropTypes.node,
+};
 
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false);
